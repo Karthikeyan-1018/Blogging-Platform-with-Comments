@@ -1,0 +1,237 @@
+.editor-container {
+  display: grid;
+  grid-template-columns: 2.2fr 1fr;
+  gap: 40px;
+  padding: 40px 0;
+}
+
+@media (max-width: 992px) {
+  .editor-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+.editor-card {
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.editor-tabs {
+  display: flex;
+  border-bottom: 1px solid var(--border-color);
+  gap: 20px;
+  padding-bottom: 12px;
+}
+
+.editor-tab {
+  background: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 4px 10px;
+  transition: var(--transition-smooth);
+}
+
+.editor-tab.active {
+  color: var(--accent-primary);
+  border-bottom: 2px solid var(--accent-primary);
+}
+
+.tags-input-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  border: 1px solid var(--border-color);
+  background: rgba(255, 255, 255, 0.03);
+  padding: 10px 16px;
+  border-radius: var(--border-radius-sm);
+}
+
+.tags-input-wrapper:focus-within {
+  border-color: var(--accent-primary);
+}
+
+.tags-input {
+  border: none;
+  background: transparent;
+  outline: none;
+  font-size: 0.95rem;
+  flex-grow: 1;
+  min-width: 120px;
+}
+
+.tag-badge {
+  background: var(--bg-tertiary);
+  border: 1px solid var(--border-color);
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.btn-tag-remove {
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  font-size: 0.75rem;
+}
+
+.btn-tag-remove:hover {
+  color: var(--error);
+}
+
+/* SEO Panel widgets */
+.seo-panel {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  height: fit-content;
+}
+
+.seo-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.seo-score-gauge {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--bg-secondary);
+  border: 4px solid var(--error);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  font-size: 1.1rem;
+  font-family: var(--font-display);
+  transition: var(--transition-smooth);
+}
+
+.seo-score-gauge.medium {
+  border-color: var(--warning);
+}
+
+.seo-score-gauge.good {
+  border-color: var(--success);
+}
+
+.seo-checklist {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  font-size: 0.85rem;
+}
+
+.seo-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: var(--text-secondary);
+}
+
+.seo-item.passed {
+  color: var(--success);
+}
+
+.seo-icon {
+  font-size: 1rem;
+}
+
+.editor-actions {
+  display: flex;
+  gap: 16px;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+.btn-draft {
+  background: transparent;
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  padding: 12px 24px;
+  border-radius: var(--border-radius-sm);
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.btn-draft:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: var(--text-secondary);
+}
+
+/* Rich Text Toolbar */
+.editor-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  border: 1px solid var(--border-color);
+  border-bottom: none;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 8px;
+  border-radius: var(--border-radius-sm) var(--border-radius-sm) 0 0;
+}
+
+.toolbar-btn {
+  background: var(--bg-secondary);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+  min-width: 34px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.85rem;
+  transition: var(--transition-smooth);
+  padding: 0 8px;
+}
+
+.toolbar-btn:hover {
+  border-color: var(--accent-primary);
+  color: var(--accent-primary);
+}
+
+.content-editor-wrapper {
+  border: 1px solid var(--border-color);
+  border-radius: 0 0 var(--border-radius-sm) var(--border-radius-sm);
+}
+
+.editor-textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.02);
+  color: var(--text-primary);
+  font-family: inherit;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  padding: 20px;
+  resize: vertical;
+}
+
+.editor-textarea:focus {
+  border: 2px solid var(--accent-primary);
+}
+
+
+.spinner-icon {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
